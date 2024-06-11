@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include supplier_name_reference_version13 *.css
+recursive-include supplier_name_reference_version13 *.csv
+recursive-include supplier_name_reference_version13 *.html
+recursive-include supplier_name_reference_version13 *.ico
+recursive-include supplier_name_reference_version13 *.js
+recursive-include supplier_name_reference_version13 *.json
+recursive-include supplier_name_reference_version13 *.md
+recursive-include supplier_name_reference_version13 *.png
+recursive-include supplier_name_reference_version13 *.py
+recursive-include supplier_name_reference_version13 *.svg
+recursive-include supplier_name_reference_version13 *.txt
+recursive-exclude supplier_name_reference_version13 *.pyc
