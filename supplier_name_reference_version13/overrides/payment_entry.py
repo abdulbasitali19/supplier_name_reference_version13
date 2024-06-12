@@ -1,7 +1,7 @@
 import frappe
 
 @frappe.whitelist()
-def updating_supllier_number_in_references():
+def updating_supplier_number_in_references(party):
     query = """
             SELECT 
                 jea.supplier_number,
@@ -11,8 +11,7 @@ def updating_supllier_number_in_references():
             INNER JOIN 
                 `tabJournal Entry` je ON je.name = jea.parent
             WHERE
-                je.docstatus = 1
-        """
-    spno = frappe.db.sql(query, as_dict=1)
+            jea.party = %s AND je.docstatus = 1   """
+    spno = frappe.db.sql(query, party, as_dict=1)
     spno_dict = {item['name']: item['supplier_number'] for item in spno}
     return spno_dict
