@@ -11,8 +11,7 @@ def updating_supllier_number_in_references():
             INNER JOIN 
                 `tabJournal Entry` je ON je.name = jea.parent
             WHERE
-                jea.party_type = 'Supplier'
-                AND je.docstatus = 1
+                je.docstatus = 1
         """
     spno = frappe.db.sql(query, as_dict=1)
     spno_dict = {item['name']: item['supplier_number'] for item in spno}
